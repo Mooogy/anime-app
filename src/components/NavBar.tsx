@@ -7,7 +7,7 @@ const NavBar = () => {
             AN
           </span>
         </div>
-        <div className="flex w-1/3 justify-center gap-[3vw] items-center text-[#D3D3D3]">
+        <div className="flex w-1/3 justify-center gap-[3vw] items-center text-gray-light">
           <span className="cursor-pointer hover:text-white transition-colors ease-in-out duration-150">
             Search
           </span>
@@ -18,7 +18,7 @@ const NavBar = () => {
             Manga
           </span>
         </div>
-        <div className="flex items-center gap-[2vw] text-[#D3D3D3] text-[0.8vw]">
+        <div className="flex items-center gap-[2vw] text-gray-light text-[0.8vw]">
           <span className="cursor-pointer hover:text-white transition-colors ease-in-out duration-150">
             Sign Up
           </span>
