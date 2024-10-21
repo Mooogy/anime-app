@@ -1,18 +1,24 @@
 import Image from "next/image";
+import { Anime } from "@/utils/fetchAniListData";
 
-const AniCard = () => {
+interface AniCardProps {
+  anime: Anime;
+}
+
+const AniCard: React.FC<AniCardProps> = ({ anime }) => {
   return (
-    <div className="h-full w-[12%] flex-col flex gap-[1vh]">
-      <div className="overflow-hidden h-[90%] relative drop-shadow-lg rounded-xl hover:cursor-pointer ">
+    <div className="h-full flex-col flex gap-[1vh]">
+      <div className="overflow-hidden h-full hover:opacity-90 duration-300 transition-opacity ease-in-out relative drop-shadow-lg rounded-xl hover:cursor-pointer ">
         <Image
-          src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx15125-2ngZyS4KrMqA.png"
+          src={anime.coverImage.large}
           alt="Anime"
-          layout="fill"
-          objectFit="contain"
-          objectPosition="left"
+          fill
+          className="object-cover"
         />
       </div>
-      <span className="text-gray-dark">Title goes here</span>
+      <span className="text-gray-dark h-[10%] hover:text-black select-none cursor-pointer">
+        {anime.title.romaji}
+      </span>
     </div>
   );
 };
